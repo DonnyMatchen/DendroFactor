@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DendroFactor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DendroFactor_jar</output-path>
+    <root id="archive" name="DendroFactor.jar">
+      <element id="module-output" name="DendroFactor" />
+    </root>
+  </artifact>
+</component>
