@@ -1,2 +1,2 @@
 # DESCRIPTION
-This is a simple library that handles factors of arbitrarily large numbers.  It also includes a function that uses factoring techniques to conduct arbitrarily large exponentiation, as well as one for modular exponentiation.
+This is a simple library that handles factors of arbitrarily large numbers.

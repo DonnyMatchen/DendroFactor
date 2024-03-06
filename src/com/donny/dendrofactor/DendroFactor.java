@@ -4,40 +4,6 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class DendroFactor {
-    public static BigInteger bigExponentiation(BigInteger base, BigInteger exp) {
-        ArrayList<Holder> factors = factor(exp);
-        BigInteger val = base;
-        for (Holder h : factors) {
-            if (h.NUMBER.compareTo(BigInteger.valueOf(1000000)) < 0) {
-                for (int i = 0; i < h.getPower(); i++) {
-                    val = val.pow(h.NUMBER.intValue());
-                }
-            } else {
-                val = bigExponentiation(val,
-                        h.getValue().subtract(BigInteger.ONE)
-                ).multiply(val);
-            }
-        }
-        return val;
-    }
-    public static BigInteger bigModularExponentiation(BigInteger base, BigInteger exp, BigInteger mod) {
-        ArrayList<Holder> factors = factor(exp);
-        BigInteger val = base;
-        for (Holder h : factors) {
-            if (h.NUMBER.compareTo(BigInteger.valueOf(1000000)) < 0) {
-                for (int i = 0; i < h.getPower(); i++) {
-                    val = val.pow(h.NUMBER.intValue()).mod(mod);
-                }
-            } else {
-                val = bigModularExponentiation(val,
-                        h.getValue().subtract(BigInteger.ONE),
-                        mod
-                ).multiply(val).mod(mod);
-            }
-        }
-        return val;
-    }
-
     public static class Holder {
         public final BigInteger NUMBER;
         private int power;
@@ -62,6 +28,11 @@ public class DendroFactor {
         public int getPower() {
             return power;
         }
+
+        @Override
+        public String toString() {
+            return "(" + NUMBER + "^" + power+ ")";
+        }
     }
 
     public static ArrayList<Holder> factor(BigInteger n) {
@@ -76,35 +47,29 @@ public class DendroFactor {
                 }
             }
             if (flag) {
-                res.add(new Holder(b));
+                res.add(0, new Holder(b));
             }
         }
         return res;
     }
 
     private static ArrayList<BigInteger> fac(BigInteger n) {
-        BigInteger bound = n.sqrt();
-        if (bound.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) <= 0) {
-            int b = bound.intValue();
-            for (int i = 2; i < b; i++) {
-                BigInteger test = n.mod(BigInteger.valueOf(i));
-                if (test.equals(BigInteger.ZERO)) {
-                    ArrayList<BigInteger> inter = new ArrayList<>();
-                    inter.add(BigInteger.valueOf(i));
-                    inter.addAll(fac(n.divide(BigInteger.valueOf(i))));
-                    return inter;
+        BigInteger ittr = BigInteger.TWO;
+        if(!Primes.contains(n)) {
+            while (ittr.pow(2).compareTo(n) <= 0) {
+                BigInteger test = n.mod(ittr);
+                if (test.compareTo(BigInteger.ZERO) == 0) {
+                    if (!Primes.contains(ittr)) {
+                        Primes.addPrime(ittr);
+                    }
+                    ArrayList<BigInteger> fin = fac(n.divide(ittr));
+                    fin.add(ittr);
+                    return fin;
+                } else {
+                    ittr = Primes.nextPrime(ittr);
                 }
             }
-        } else {
-            for (BigInteger i = BigInteger.TWO; i.compareTo(bound) < 0; i = i.add(BigInteger.ONE)) {
-                BigInteger test = n.mod(i);
-                if (test.equals(BigInteger.ZERO)) {
-                    ArrayList<BigInteger> inter = new ArrayList<>();
-                    inter.add(i);
-                    inter.addAll(fac(n.divide(i)));
-                    return inter;
-                }
-            }
+            Primes.addPrime(n);
         }
         ArrayList<BigInteger> fin = new ArrayList<>();
         fin.add(n);
