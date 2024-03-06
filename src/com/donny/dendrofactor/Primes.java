@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Primes {
-    private static ArrayList<BigInteger> PRIMES = new ArrayList<>();
+    private static final ArrayList<BigInteger> PRIMES = new ArrayList<>();
 
     public static BigInteger nextPrime(BigInteger n) {
         for (BigInteger p : PRIMES) {

@@ -54,19 +54,19 @@ public class DendroFactor {
     }
 
     private static ArrayList<BigInteger> fac(BigInteger n) {
-        BigInteger ittr = BigInteger.TWO;
+        BigInteger candidate = BigInteger.TWO;
         if (!Primes.contains(n)) {
-            while (ittr.pow(2).compareTo(n) <= 0) {
-                BigInteger test = n.mod(ittr);
+            while (candidate.pow(2).compareTo(n) <= 0) {
+                BigInteger test = n.mod(candidate);
                 if (test.compareTo(BigInteger.ZERO) == 0) {
-                    if (!Primes.contains(ittr)) {
-                        Primes.addPrime(ittr);
+                    if (!Primes.contains(candidate)) {
+                        Primes.addPrime(candidate);
                     }
-                    ArrayList<BigInteger> fin = fac(n.divide(ittr));
-                    fin.add(ittr);
+                    ArrayList<BigInteger> fin = fac(n.divide(candidate));
+                    fin.add(candidate);
                     return fin;
                 } else {
-                    ittr = Primes.nextPrime(ittr);
+                    candidate = Primes.nextPrime(candidate);
                 }
             }
             Primes.addPrime(n);
