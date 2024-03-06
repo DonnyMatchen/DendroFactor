@@ -66,7 +66,7 @@ public class DendroFactor {
                     fin.add(candidate);
                     return fin;
                 } else {
-                    candidate = Primes.nextPrime(candidate);
+                    candidate = candidate.add(BigInteger.ONE);
                 }
             }
             Primes.addPrime(n);
