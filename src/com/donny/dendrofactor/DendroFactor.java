@@ -31,7 +31,7 @@ public class DendroFactor {
 
         @Override
         public String toString() {
-            return "(" + NUMBER + "^" + power+ ")";
+            return "(" + NUMBER + "^" + power + ")";
         }
     }
 
@@ -55,7 +55,7 @@ public class DendroFactor {
 
     private static ArrayList<BigInteger> fac(BigInteger n) {
         BigInteger ittr = BigInteger.TWO;
-        if(!Primes.contains(n)) {
+        if (!Primes.contains(n)) {
             while (ittr.pow(2).compareTo(n) <= 0) {
                 BigInteger test = n.mod(ittr);
                 if (test.compareTo(BigInteger.ZERO) == 0) {

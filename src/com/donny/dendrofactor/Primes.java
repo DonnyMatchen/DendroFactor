@@ -8,8 +8,8 @@ public class Primes {
     private static ArrayList<BigInteger> PRIMES = new ArrayList<>();
 
     public static BigInteger nextPrime(BigInteger n) {
-        for(BigInteger p : PRIMES) {
-            if(p.compareTo(n) > 0) {
+        for (BigInteger p : PRIMES) {
+            if (p.compareTo(n) > 0) {
                 return p;
             }
         }
