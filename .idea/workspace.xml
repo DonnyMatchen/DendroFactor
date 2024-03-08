@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71222759-29d9-468d-b014-6abac9902f1e" name="Changes" comment="stylistic changes" />
+    <list default="true" id="71222759-29d9-468d-b014-6abac9902f1e" name="Changes" comment="This is why we test">
+      <change afterPath="$PROJECT_DIR$/src/com/donny/dendrofactor/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/donny/dendrofactor/DendroFactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/donny/dendrofactor/DendroFactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/donny/dendrofactor/Primes.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +56,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/donny/Sync/Personal/dv/DendroFactor",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
   }
@@ -103,7 +108,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709748436283</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="removed running config">
+      <option name="closed" value="true" />
+      <created>1709748493460</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709748493460</updated>
+    </task>
+    <task id="LOCAL-00006" summary="This is why we test">
+      <option name="closed" value="true" />
+      <created>1709751447750</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709751447750</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +143,8 @@
     <MESSAGE value="redesign" />
     <MESSAGE value="code cleanup" />
     <MESSAGE value="stylistic changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="stylistic changes" />
+    <MESSAGE value="removed running config" />
+    <MESSAGE value="This is why we test" />
+    <option name="LAST_COMMIT_MESSAGE" value="This is why we test" />
   </component>
 </project>

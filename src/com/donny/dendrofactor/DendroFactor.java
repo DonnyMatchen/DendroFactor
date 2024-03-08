@@ -5,27 +5,31 @@ import java.util.ArrayList;
 
 public class DendroFactor {
     public static class Holder {
-        public final BigInteger NUMBER;
-        private int power;
+        private final BigInteger NUMBER;
+        private BigInteger power;
 
         public Holder(BigInteger n) {
             NUMBER = n;
-            power = 1;
+            power = BigInteger.ONE;
         }
 
         public BigInteger getValue() {
-            return NUMBER.pow(power);
+            return Functions.exp(NUMBER, power);
         }
 
         public void pInc() {
-            power++;
+            power = power.add(BigInteger.ONE);
         }
 
         public boolean isInt() {
             return NUMBER.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) <= 0;
         }
 
-        public int getPower() {
+        public BigInteger getNumber() {
+            return NUMBER;
+        }
+
+        public BigInteger getPower() {
             return power;
         }
 
@@ -35,44 +39,29 @@ public class DendroFactor {
         }
     }
 
-    public static ArrayList<Holder> factor(BigInteger n) {
-        ArrayList<BigInteger> factorized = fac(n);
-        ArrayList<Holder> res = new ArrayList<>();
-        for (BigInteger b : factorized) {
-            boolean flag = true;
-            for (Holder h : res) {
-                if (h.NUMBER.equals(b)) {
-                    h.pInc();
-                    flag = false;
-                }
-            }
-            if (flag) {
-                res.add(0, new Holder(b));
-            }
-        }
-        return res;
-    }
-
-    private static ArrayList<BigInteger> fac(BigInteger n) {
+    private static ArrayList<Holder> factor(BigInteger n) {
         BigInteger candidate = BigInteger.TWO;
-        if (!Primes.contains(n)) {
-            while (candidate.pow(2).compareTo(n) <= 0) {
-                BigInteger test = n.mod(candidate);
-                if (test.compareTo(BigInteger.ZERO) == 0) {
-                    if (!Primes.contains(candidate)) {
-                        Primes.addPrime(candidate);
+        while (candidate.pow(2).compareTo(n) <= 0) {
+            BigInteger test = n.mod(candidate);
+            if (test.compareTo(BigInteger.ZERO) == 0) {
+                ArrayList<Holder> fin = factor(n.divide(candidate));
+                boolean found = false;
+                for (Holder h : fin) {
+                    if (h.NUMBER.compareTo(candidate) == 0) {
+                        h.pInc();
+                        found = true;
                     }
-                    ArrayList<BigInteger> fin = fac(n.divide(candidate));
-                    fin.add(candidate);
-                    return fin;
-                } else {
-                    candidate = candidate.add(BigInteger.ONE);
                 }
+                if (!found) {
+                    fin.add(new Holder(candidate));
+                }
+                return fin;
+            } else {
+                candidate = candidate.add(BigInteger.ONE);
             }
-            Primes.addPrime(n);
         }
-        ArrayList<BigInteger> fin = new ArrayList<>();
-        fin.add(n);
+        ArrayList<Holder> fin = new ArrayList<>();
+        fin.add(new Holder(n));
         return fin;
     }
 }
