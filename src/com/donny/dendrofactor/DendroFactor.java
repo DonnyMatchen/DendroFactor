@@ -39,7 +39,7 @@ public class DendroFactor {
         }
     }
 
-    private static ArrayList<Holder> factor(BigInteger n) {
+    public static ArrayList<Holder> factor(BigInteger n) {
         BigInteger candidate = BigInteger.TWO;
         while (candidate.pow(2).compareTo(n) <= 0) {
             BigInteger test = n.mod(candidate);

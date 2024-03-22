@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71222759-29d9-468d-b014-6abac9902f1e" name="Changes" comment="This is why we test">
-      <change afterPath="$PROJECT_DIR$/src/com/donny/dendrofactor/Functions.java" afterDir="false" />
+    <list default="true" id="71222759-29d9-468d-b014-6abac9902f1e" name="Changes" comment="removed useless primes side function&#10;&#10;holders now handles arbitrarily sized powers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/donny/dendrofactor/DendroFactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/donny/dendrofactor/DendroFactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/donny/dendrofactor/Primes.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +46,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Unnamed.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/donny/Sync/Personal/dv/DendroFactor",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/donny/Sync/Personal/dv/DendroFactor&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -124,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709751447750</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="removed useless primes side function&#10;&#10;holders now handles arbitrarily sized powers">
+      <option name="closed" value="true" />
+      <created>1709929687486</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709929687486</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +151,7 @@
     <MESSAGE value="stylistic changes" />
     <MESSAGE value="removed running config" />
     <MESSAGE value="This is why we test" />
-    <option name="LAST_COMMIT_MESSAGE" value="This is why we test" />
+    <MESSAGE value="removed useless primes side function&#10;&#10;holders now handles arbitrarily sized powers" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed useless primes side function&#10;&#10;holders now handles arbitrarily sized powers" />
   </component>
 </project>
